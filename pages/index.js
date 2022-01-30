@@ -32,7 +32,8 @@ function Titulo(props) {
 // }
 // export default HomePage
 export default function PaginaInicial() {
-    const [username,setUsername] = React.useState('denilsonsobreira');
+    const [username,setUsername] = React.useState('denilsonsobreira')
+    // const [name,setName] = React.useState('denilsonsobreira)')
     const roteamento = useRouter()
 
     return (
@@ -42,7 +43,7 @@ export default function PaginaInicial() {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             backgroundColor: appConfig.theme.colors.primary[500],
             // backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
-            backgroundImage: 'url(https://cdnb.artstation.com/p/assets/images/images/024/538/827/original/pixel-jeff-clipa-s.gif?1582740711)',
+            backgroundImage: `url(${appConfig.theme.urlBackgroundImage})`,
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
           }}
         >
@@ -83,6 +84,12 @@ export default function PaginaInicial() {
                 onChange={function (event) {
                   const valor = event.target.value 
                   setUsername(valor)
+                  // setName(valor)
+                  // fetch(`https://api.github.com/users/${valor}`)
+                  //   .then(res => res.json())
+                  //     .then(data => {
+                  //       setName(data.name)
+                  //     })
                 }}
                 fullWidth
                 textFieldColors={{
@@ -102,7 +109,7 @@ export default function PaginaInicial() {
                   contrastColor: appConfig.theme.colors.neutrals["000"],
                   mainColor: appConfig.theme.colors.primary[500],
                   mainColorLight: appConfig.theme.colors.primary[400],
-                  mainColorStrong: appConfig.theme.colors.primary[600]
+                  mainColorStrong: appConfig.theme.colors.primary[800]
                 }}
               />
             </Box>
@@ -149,4 +156,4 @@ export default function PaginaInicial() {
         </Box>
       </>
     );
-  }
+}
